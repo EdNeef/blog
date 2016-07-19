@@ -2,21 +2,20 @@
 <html>
 <head>
   <title>Blog</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div class="container">
   <% flash.each do |name, msg| %>
-  
-  <ul>
-    <li><%= msg %></li>
-  </ul>
-  
+
+    <p class="bg-primary" style="padding: 20px; margin: 40px 0;"><%= msg %>
+
   <% end %>
 
 <%= yield %>
-
+  </div>
 </body>
 </html>
