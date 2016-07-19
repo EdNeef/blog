@@ -8,5 +8,6 @@
   <p><%= article.description %></p>
   <button class="btn btn-default" type="submit"><%= link_to "Edit article", edit_article_path(article) %></button>
   <button class="btn btn-default" type="submit"><%= link_to "View full article", article_path(article) %></button>
+  <button class="btn btn-default btn-sm" type="submit"><%= link_to "Delete article", article_path(article), method: :delete, data: {confirm: "Weet je het zeker?"} %></button>
 </div>
 <% end %>
