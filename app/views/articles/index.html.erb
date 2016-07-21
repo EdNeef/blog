@@ -1,5 +1,10 @@
 <h1>Alle blog-posts op een rijtje</h1>
 
 <%= link_to "+ Schrijf nieuwe post", new_article_path, class: "btn btn-success btn-lg" %>
-
+<div class="text-center">
+  <%= will_paginate %>
+</div>
 <%= render 'article', obj: @articles %>
+<div class="text-center">
+  <%= will_paginate %>
+</div>

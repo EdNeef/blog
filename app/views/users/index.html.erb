@@ -1,6 +1,12 @@
+<div class="text-center">
+  <%= will_paginate %>
+</div>
 <% @users.each do |user| %>
 <div class="row bg-warning" style="padding: 20px; margin: 30px 0; border: 1px solid #999;">
   <h3><%= link_to user.username, user_path(user) %></h3>
   <p><%= pluralize(user.articles.count, "blogpost") if user.articles %></p>
 </div>
 <% end %>
+<div class="text-center">
+  <%= will_paginate %>
+</div>
