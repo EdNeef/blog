@@ -8,6 +8,7 @@
 <p><b>Auteur:</b><br />Anoniem</p>
 <% end %>
 
-
-<%= link_to "Bewerk deze post", edit_article_path(@article) %> |
+<% if logged_in? && current_user == @article.user %>
+<%= link_to "Bewerk deze post", edit_article_path(@article) %> | 
+<% end %>
 <%= link_to "Terug naar overzicht", articles_path %>

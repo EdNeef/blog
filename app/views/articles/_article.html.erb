@@ -3,8 +3,11 @@
   <h3><%= article.title %></h3>
   <p><%= article.description %></p>
   <small class="date-info">Geschreven door: <%= article.user.username if article.user %>, <%= time_ago_in_words(article.created_at) %> ago</small>
-  <%= link_to "Bewerk post", edit_article_path(article), class: "btn btn-primary btn-lg" %>
-  <%= link_to "Bekijk volledige post", article_path(article), class: "btn btn-primary btn-lg" %>
-  <%= link_to "X", article_path(article), class: "btn btn-danger btn-sm pull-right", method: :delete, data: {confirm: "Weet je het zeker?"} %>
+  <% if logged_in? && current_user == article.user %>
+    <div class="actions">
+      <%= link_to "Bewerk post", edit_article_path(article), class: "btn btn-primary btn-lg" %>
+      <%= link_to "X", article_path(article), class: "btn btn-danger btn-sm pull-right", method: :delete, data: {confirm: "Weet je het zeker?"} %>
+    </div>
+  <% end %>
 </div>
 <% end %>
