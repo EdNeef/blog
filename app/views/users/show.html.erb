@@ -1,0 +1,5 @@
+<div class="text-center"><h1>Dit is <%= @user.username %> zijn/haar pagina</h1>
+<%= gravatar_for @user, size: 200 %>
+  <h3><%= @user.username %> zijn/haar posts:</h3></div>
+
+<%= render 'articles/article', obj: @user.articles %>

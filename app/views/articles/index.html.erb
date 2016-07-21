@@ -2,13 +2,4 @@
 
 <%= link_to "+ Schrijf nieuwe post", new_article_path, class: "btn btn-success btn-lg" %>
 
-<% @articles.each do |article| %>
-<div class="row bg-warning" style="padding: 20px; margin: 30px 0; border: 1px solid #999;">
-  <h3><%= article.title %></h3>
-  <p><%= article.description %></p>
-  <small class="date-info">Geschreven door: <%= article.user.username if article.user %>, <%= time_ago_in_words(article.created_at) %> ago</small>
-  <%= link_to "Bewerk post", edit_article_path(article), class: "btn btn-primary btn-lg" %>
-  <%= link_to "Bekijk volledige post", article_path(article), class: "btn btn-primary btn-lg" %>
-  <%= link_to "X", article_path(article), class: "btn btn-danger btn-sm pull-right", method: :delete, data: {confirm: "Weet je het zeker?"} %>
-</div>
-<% end %>
+<%= render 'article', obj: @articles %>
