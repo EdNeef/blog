@@ -53,7 +53,3 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :dev do
-  gem 'sqlite3'
-end
-
