@@ -2,6 +2,12 @@
 
 <p><b>Titel:</b><br /><%= @article.title %></p>
 <p><b>Beschrijving:</b><br /><%= @article.description %></p>
+<% if @article.user %>
+<p><b>Auteur:</b><br /><%= link_to @article.user.username, user_path(@article.user) %></p>
+<% else %>
+<p><b>Auteur:</b><br />Anoniem</p>
+<% end %>
+
 
 <%= link_to "Bewerk deze post", edit_article_path(@article) %> |
 <%= link_to "Terug naar overzicht", articles_path %>
